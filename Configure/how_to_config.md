@@ -6,6 +6,7 @@
     * oneAPI 2021.2.0: ```l_HPCKit_p_2021.2.0.2997.sh```
     * after installation, set the environment: ```source /opt/intel/oneapi/setvars.sh```
     * it works for Gemini, but not for PowerGraph nor PowerLyra
+    * when running Gemini, set the gcc&g++ to 9/10
 
 2. GNU for PowerGraph and PowerLyra
     * g++ 4.4.7
