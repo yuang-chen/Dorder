@@ -21,3 +21,27 @@
 
 
 ## Configuration on CentOS
+The Cluster with CentOS 7 raises a variety of issues 
+
+### Cluster Setting: 
+1. admin node: mu01 - the one we login using **ssh** (e.g., ```ssh yuang@10.26.1.30```)
+2. computing node: gpu01~08 - the ones we can access via **rlogin**, **rsh**, and **rexec** from *mu01* (e.g., ```rlogin gpu01```)
+3. storing node: mds01~02
+
+Everything we install in /opt/soft/ are shared through the cluster.
+
+### Compiler
+1. Intel for Gemini
+    * there exist an Intel ICC 18.0.1 that fails to compile Gemini, causing conflits!
+    * install the oneAPI tool kit in *mu01* following the instrunction on Ubuntu
+    * specify the installation path: ```source /opt/soft/oneapi/setvars.sh```
+
+2. Update *libstdc++*
+    * repeat following commands on every computing node, e.g., gpu01 ~ gpu08
+    ```
+    cp /opt/soft/libstdc++.so.6.0.26 /usr/lib64/ &&
+
+    mv /usr/lib64/libstdc++.so.6 /usr/lib64/libstdc++.so.6.old &&
+
+    ln -s /usr/lib64/libstdc++.so.6.0.26 /usr/lib64/libstdc++.so.6
+    ```
