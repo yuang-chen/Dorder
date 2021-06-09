@@ -63,5 +63,7 @@ install *munge* and *slurm* with [ref1](https://github.com/Artlands/Install-Slur
 
 
 # 3. Switch between the mess of softwares
-
 use [module](https://modules.readthedocs.io/en/stable/INSTALL.html) to clean the environment
+
+add the environment variable:
+```export MODULEPATH="${MODULEPATH}:/path/to/my/modules```
